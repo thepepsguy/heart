@@ -1,0 +1,283 @@
+.mjo-body {
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    /* background-color: #fff; Removed to match global theme */
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+li>a {
+    font-family: "Inter";
+}
+
+/* Utility for List Reset */
+.mjo-list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Main Layout Container --- */
+.mjo-container {
+    max-width: 1730px;
+    margin: 0 auto;
+    padding: 0px 50px;
+}
+
+/* --- Section Separator Line (Simulated) --- */
+.mjo-separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 3rem 0;
+}
+
+/* --- Main Header Grid (Desktop View) --- */
+.mjo-header-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Mobile: single column */
+    gap: 2rem;
+}
+
+/* Media query for tablet and desktop (two-column layout) */
+@media (min-width: 768px) {
+    .mjo-header-content {
+        grid-template-columns: 4fr 5fr;
+        /* Left section vs Right section */
+        gap: 5rem;
+    }
+}
+
+/* --- Left Side: Contact and Menu --- */
+.mjo-left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 50px;
+    /* Added margin to align with right side */
+}
+
+/* Desktop: Address side-by-side with menus */
+@media (min-width: 1024px) {
+    .mjo-left-side {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+
+    .mjo-contact-info {
+        flex: 0 0 250px;
+        /* Fixed width for address */
+    }
+
+    .mjo-menu-cols {
+        flex: 1;
+    }
+}
+
+.mjo-contact-info p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Menu Columns (sub-grid for services/menu) */
+.mjo-menu-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.mjo-menu-col h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.mjo-menu-col a {
+    display: block;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    font-weight: 400;
+    padding: 0.4rem 0;
+    transition: all 0.2s ease;
+}
+
+.mjo-menu-col a:hover {
+    color: #000;
+    transform: translateX(5px);
+}
+
+/* --- Right Side: Headline and CTA --- */
+.mjo-heading-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.mjo-heading-section h1 {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    margin-top: 50px;
+}
+
+/* Adjusting headline size for desktop */
+@media (min-width: 768px) {
+    .mjo-heading-section h1 {
+        font-size: 3.5rem;
+        max-width: 100%;
+    }
+}
+
+/* Highlighted text simulation */
+.mjo-highlight {
+    padding: 0 0.15em;
+    box-decoration-break: clone;
+}
+
+/* --- Call to Action Button --- */
+.mjo-cta-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 9999px;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+    max-width: fit-content;
+    margin-top: 15px;
+}
+
+.mjo-cta-button::before {
+    content: "";
+    /* Removed dot */
+    margin-right: 0;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.mjo-cta-button:hover {
+    background-color: #222;
+}
+
+/* --- Footer (Copyright and Social) --- */
+.mjo-footer-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+    .mjo-footer-grid {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
+
+.mjo-footer-left-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mjo-footer-address {
+    color: #666;
+}
+
+.mjo-copyright-links {
+    color: #999;
+}
+
+.mjo-copyright-links a,
+.mjo-social-links a {
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.mjo-social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mjo-copyright-links a:hover,
+.mjo-social-links a:hover {
+    opacity: 0.6;
+}
+
+.mjo-social-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mjo-policy-links {
+    margin-top: 1rem;
+}
+
+/* --- Giant Logo Text --- */
+.mjo-giant-logo {
+    max-width: 1730px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.mjo-giant-logo p {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: lowercase;
+    word-break: break-word;
+}
+
+/* Scale up the giant logo text dramatically on desktop */
+@media (min-width: 1024px) {
+    .mjo-giant-logo p {
+        font-size: 12rem;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1400px) {
+    .mjo-giant-logo p {
+        font-size: 12rem;
+        text-align: center;
+    }
+}
+
+/* --- Hidden Link --- */
+.mjo-hidden-link {
+    opacity: 0;
+    font-size: 10px;
+    margin-left: 10px;
+    transition: opacity 0.3s ease;
+    color: #999 !important;
+    text-decoration: none;
+}
+
+.mjo-copyright-links:hover .mjo-hidden-link {
+    opacity: 1;
+}
+
+.mjo-hidden-link:hover {
+    color: #F04899 !important;
+}

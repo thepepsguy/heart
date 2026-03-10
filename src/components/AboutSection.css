@@ -1,0 +1,305 @@
+ /* CSS Reset for Box Sizing */
+
+
+ /* --- QWE: Main Container and Layout --- */
+
+ .QWE-container {
+     max-width: 1730px;
+     /* background-color: #ffffff; Removed to match global theme */
+     border-radius: 12px;
+     margin: 0px auto;
+     width: 100%;
+     padding: 0px 50px;
+ }
+
+ .QWE-content-wrapper {
+     display: flex;
+
+     align-items: flex-start;
+     justify-content: space-between;
+ }
+
+ .QWE-stats-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 40px 30px;
+     justify-items: end;
+ }
+
+ /* --- QWE: Text Block (Left Side) --- */
+
+ .QWE-text-block {
+     flex: 1;
+     /* Takes up available space */
+     max-width: 60%;
+     /* Limit text block width on large screens */
+ }
+
+ .QWE-heading {
+     font-size: 3.5rem;
+     font-weight: 700;
+     color: #1a1a1a;
+     margin-bottom: 20px;
+     line-height: 1.1;
+ }
+
+ .QWE-paragraph {
+     font-size: 1.5rem;
+     font-weight: 400;
+     color: #555555;
+     line-height: 1.8;
+     max-width: 1000px;
+ }
+
+ /* --- QWE: Stats Block (Right Side) --- */
+
+ .QWE-stats-block {
+     flex-basis: 514px;
+     flex-shrink: 0;
+     padding-top: 50px;
+ }
+
+ .lab-verification-container {
+     background: rgba(255, 255, 255, 0.5);
+     backdrop-filter: blur(10px);
+     border: 1px solid rgba(0, 0, 0, 0.05);
+     padding: 40px;
+     border-radius: 24px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+ }
+
+ .lab-verification-title {
+     font-size: 1.8rem;
+     font-weight: 700;
+     color: #1a100a;
+     margin-bottom: 15px;
+     font-family: 'Instrument Sans', sans-serif;
+ }
+
+ .lab-verification-desc {
+     font-size: 1rem;
+     color: #555;
+     line-height: 1.6;
+     margin-bottom: 30px;
+     font-family: 'Outfit', sans-serif;
+ }
+
+ .lab-test-links {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+ }
+
+ .lab-test-btn {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 18px 25px;
+     background: #ffffff;
+     border: 1px solid #eeeeee;
+     border-radius: 12px;
+     cursor: pointer;
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     text-align: left;
+     width: 100%;
+ }
+
+ .lab-test-btn:hover {
+     border-color: #1a1a1a;
+     transform: translateY(-2px);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+ }
+
+ .lab-test-name {
+     font-weight: 600;
+     color: #1a1a1a;
+     font-family: 'Outfit', sans-serif;
+ }
+
+ .lab-test-tag {
+     font-size: 0.8rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     color: #F04899;
+     letter-spacing: 0.05em;
+ }
+
+ /* Modal Styles */
+ .lab-modal-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.8);
+     backdrop-filter: blur(8px);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 9999;
+     padding: 20px;
+     animation: fadeIn 0.3s ease;
+ }
+
+ .lab-modal-content {
+     background: #fff;
+     width: 100%;
+     max-width: 1000px;
+     height: 90vh;
+     border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+     overflow: hidden;
+     animation: zoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+ }
+
+ .modal-header {
+     padding: 20px 30px;
+     border-bottom: 1px solid #eee;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .modal-header h3 {
+     margin: 0;
+     font-family: 'Instrument Sans', sans-serif;
+     font-size: 1.4rem;
+ }
+
+ .modal-close {
+     background: none;
+     border: none;
+     font-size: 2.5rem;
+     line-height: 1;
+     cursor: pointer;
+     color: #999;
+     transition: color 0.2s;
+ }
+
+ .modal-close:hover {
+     color: #111;
+ }
+
+ .modal-body {
+     flex: 1;
+     background: #f9f9f9;
+ }
+
+ .lab-iframe {
+     width: 100%;
+     height: 100%;
+     border: none;
+ }
+
+ .external-link-btn {
+     padding: 10px 20px;
+     background: #1a1a1a;
+     color: #fff;
+     text-decoration: none;
+     border-radius: 8px;
+     font-weight: 600;
+     font-size: 0.9rem;
+     transition: background 0.2s;
+ }
+
+ .external-link-btn:hover {
+     background: #333;
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ @keyframes zoomIn {
+     from {
+         transform: scale(0.9);
+         opacity: 0;
+     }
+
+     to {
+         transform: scale(1);
+         opacity: 1;
+     }
+ }
+
+
+
+ .modal-footer {
+     padding: 15px 30px;
+     border-top: 1px solid #eee;
+     display: flex;
+     justify-content: flex-end;
+ }
+
+
+ /* --- QWE: Responsive Design (Media Queries) --- */
+
+ /* Tablet and Mobile Layout (Screens smaller than 900px) */
+ @media (max-width: 900px) {
+     .QWE-container {
+         padding: 20px;
+     }
+
+     .QWE-content-wrapper {
+         flex-direction: column;
+         /* Stack the main blocks vertically */
+         gap: 30px;
+     }
+
+     .QWE-text-block {
+         max-width: 100%;
+         /* Text takes full width */
+     }
+
+     .QWE-stats-block {
+         flex-basis: auto;
+         /* Allow stats block to shrink/grow naturally */
+         width: 100%;
+         padding-top: 0;
+         /* Remove top padding for stacked layout */
+     }
+
+     .QWE-stats-grid {
+         /* On tablets, keep the 2x2 grid */
+         gap: 30px 20px;
+     }
+
+     .QWE-heading {
+         font-size: 2.2rem;
+     }
+
+     .QWE-stat-number {
+         font-size: 2rem;
+     }
+ }
+
+ /* Small Mobile Layout (Screens smaller than 480px) */
+ @media (max-width: 480px) {
+     .QWE-stats-grid {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 20px;
+         justify-content: space-between;
+     }
+
+     .QWE-stat-item {
+         min-width: 140px;
+         flex: 1 1 45%;
+         /* Allow items to wrap and take up available space (2 per row) */
+     }
+
+     .QWE-heading {
+         font-size: 1.8rem;
+     }
+
+     .QWE-paragraph {
+         font-size: 1rem;
+     }
+ }

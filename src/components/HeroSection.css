@@ -1,0 +1,89 @@
+/* 
+ * HeroSection.css
+ * Styled based on the dark "Product first" inspiration image
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+.hero-section-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #050c05; /* Very dark forest green/black */
+    background: radial-gradient(circle at center, #0a1f0a 0%, #050c05 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.9;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+.highlight {
+    background-color: rgba(255, 240, 0, 0.9);
+    color: #000;
+    padding: 0 4px;
+    display: inline;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+    40% {transform: translateX(-50%) translateY(-10px);}
+    60% {transform: translateX(-50%) translateY(-5px);}
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero-section-container {
+        padding: 0 5%;
+    }
+    
+    .hero-title {
+        margin-bottom: 2rem;
+    }
+    
+    .hero-subtext {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,556 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* --- GLOBAL STYLES & RESET --- */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    padding: 0 !important;
+}
+
+/* --- SLIDER CONTAINER --- */
+#hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    top: -50px;
+}
+/* --- SLIDES TRACK --- */
+#slides-container {
+    display: flex;
+    height: 100%;
+    width: 300%;
+    /* For 3 slides */
+    transition: transform 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Smooth transition curve */
+}
+
+/* --- INDIVIDUAL SLIDE --- */
+.slide {
+    width: calc(100% / 3);
+    flex-shrink: 0;
+}
+
+.slide-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #0f172a;
+    /* Fallback color */
+    position: relative;
+    /* For the overlay and content */
+}
+
+/* --- OVERLAY STYLES (SLIDE 1) --- */
+#slide-1-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    
+    /* from-blue-900/70 to-purple-900/70 */
+    opacity: 0.9;
+}
+
+/* --- OVERLAY STYLES (SLIDE 2) --- */
+#slide-2-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    /* from-green-900/70 to-teal-900/70 */
+    opacity: 0.9;
+}
+
+/* --- OVERLAY STYLES (SLIDE 3) --- */
+#slide-3-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    /* from-red-900/70 to-yellow-900/70 */
+    opacity: 0.9;
+}
+
+/* --- CONTENT STYLES --- */
+.slide-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 1rem;
+    /* px-4 */
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    /* mb-6 */
+}
+
+.logo-text {
+    margin-left: 0.75rem;
+    /* ml-3 */
+    font-size: 1.5rem;
+    /* text-2xl */
+    font-weight: 800;
+    /* font-extrabold */
+    color: #fff;
+    /* text-white */
+    letter-spacing: 0.1em;
+    /* tracking-widest */
+}
+
+.logo-icon {
+    color: #6366f1;
+    /* text-indigo-400 */
+}
+
+/* Titles */
+.title {
+    font-size: 2.25rem;
+    /* text-4xl */
+    font-weight: 800;
+    /* font-extrabold */
+    color: #fff;
+    /* text-white */
+    margin-bottom: 1rem;
+    /* mb-4 */
+    letter-spacing: -0.025em;
+    /* tracking-tight */
+    line-height: 1.25;
+    /* leading-tight */
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* drop-shadow-lg */
+}
+
+/* Subtitles */
+.subtitle {
+    font-size: 1.125rem;
+    /* text-lg */
+    color: #e5e7eb;
+    /* text-gray-200 */
+    margin-bottom: 2rem;
+    /* mb-8 */
+    max-width: 42rem;
+    /* max-w-2xl */
+    font-weight: 300;
+    /* font-light */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    /* drop-shadow-md */
+}
+
+/* Button */
+.hero-btn {
+    background-color: #4f46e5;
+    /* bg-indigo-600 */
+    color: #fff;
+    /* text-white */
+    font-weight: 600;
+    /* font-semibold */
+    padding: 0.75rem 2rem;
+    /* py-3 px-8 */
+    border-radius: 9999px;
+    /* rounded-full */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* shadow-lg */
+    transition: all 300ms ease-in-out;
+    /* transition duration-300 ease-in-out */
+    border: none;
+    cursor: pointer;
+    outline: 4px solid rgba(79, 70, 229, 0.5);
+    /* ring-4 ring-indigo-500/50 */
+}
+
+.hero-btn:hover {
+    background-color: #4338ca;
+    /* hover:bg-indigo-700 */
+    transform: scale(1.03);
+    /* hover:scale-[1.03] */
+}
+
+.hero-btn:active {
+    transform: scale(0.98);
+    /* active:scale-[0.98] */
+}
+
+/* --- NAVIGATION ARROWS --- */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.75rem;
+    /* p-3 */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* bg-white/20 */
+    color: #fff;
+    /* text-white */
+    border-radius: 9999px;
+    /* rounded-full */
+    transition: background-color 300ms;
+    /* transition-colors duration-300 */
+    backdrop-filter: blur(4px);
+    /* backdrop-blur-sm */
+    z-index: 10;
+    border: none;
+    cursor: pointer;
+    display: none;
+    /* hidden by default */
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    /* hover:bg-white/40 */
+}
+
+#prev-btn {
+    left: 1rem;
+    /* left-4 */
+}
+
+#next-btn {
+    right: 1rem;
+    /* right-4 */
+}
+
+/* --- DOTS INDICATOR --- */
+#dots-container {
+    position: absolute;
+    bottom: 1.5rem;
+    /* bottom-6 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    /* space-x-2 */
+    z-index: 10;
+}
+
+.dot {
+    height: 0.75rem;
+    /* h-3 */
+    width: 0.75rem;
+    /* w-3 */
+    border-radius: 9999px;
+    /* rounded-full */
+    background-color: rgba(209, 213, 219, 0.5);
+    /* bg-gray-300/50 */
+    transition: all 300ms;
+    border: none;
+    cursor: pointer;
+}
+
+.dot:hover {
+    background-color: #d1d5db;
+    /* hover:bg-gray-300 */
+}
+
+.dot.active {
+    background-color: #6366f1;
+    /* bg-indigo-500 */
+    width: 1.5rem;
+    /* w-6 */
+}
+
+.dot.active:hover {
+    background-color: #6366f1;
+}
+
+/* --- RESPONSIVENESS (Media Queries) --- */
+
+/* sm: breakpoint (640px and up) */
+@media (min-width: 640px) {
+    .nav-btn {
+        display: block;
+        /* sm:block */
+    }
+
+    .title {
+        font-size: 3.75rem;
+        /* sm:text-6xl */
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        /* sm:text-2xl */
+    }
+}
+
+/* md: breakpoint (768px and up) */
+@media (min-width: 768px) {
+    .title {
+        font-size: 4.5rem;
+        /* md:text-7xl */
+    }
+}
+
+/* Custom SVG for the Zap icon (Lucide equivalent) */
+.svg-zap {
+    display: inline-block;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+
+
+
+
+
+/* HEADER */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+/* Transparent */
+.header-transparent {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.header-transparent .nav-link {
+    color: #ffffff;
+}
+
+.header-transparent .logo-text-header {
+    color: #ffffff;
+}
+
+.header-transparent .logo-icon-header {
+    color: #6366f1;
+}
+
+/* Scrolled */
+.header-scrolled {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-scrolled .nav-link {
+    color: #1f2937;
+}
+
+.header-scrolled .logo-text-header {
+    color: #1f2937;
+}
+
+.header-scrolled .logo-icon-header {
+    color: #4f46e5;
+}
+
+/* Navigation */
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 300ms ease;
+}
+
+.nav-link:hover {
+    color: #4f46e5 !important;
+}
+
+/* Logo */
+.logo-container-header {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text-header {
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: color 300ms ease;
+}
+
+.logo-icon-header {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: color 300ms ease;
+}
+
+.svg-zap {
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* 1. Hamburger Menu Button */
+.hamburger-menu {
+    display: none;
+    /* Default to hidden on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    /* 32px */
+    height: 1.5rem;
+    /* 24px */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 60;
+    /* Higher than nav to stay on top */
+    transition: transform 300ms ease-in-out;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: currentColor;
+    /* Inherits color from header-transparent/header-scrolled */
+    border-radius: 10px;
+    transition: all 300ms ease-in-out;
+    transform-origin: 1px;
+}
+
+/* Hamburger transition to close icon (X) */
+.hamburger-menu.active .top-bar {
+    transform: rotate(45deg);
+}
+
+.hamburger-menu.active .middle-bar {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.hamburger-menu.active .bottom-bar {
+    transform: rotate(-45deg);
+}
+
+/* 2. Navigation Container for Mobile */
+.nav-main {
+    /* Desktop style: visible inline */
+    display: block;
+}
+
+/* 3. Navigation Menu for Mobile */
+.nav-menu {
+    /* Desktop style: horizontal */
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 4. Media Query for Tablets and Mobiles (max-width: 767px) */
+@media (max-width: 767px) {
+
+    /* Show Hamburger button */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Hide desktop navigation and style it for mobile */
+    .nav-main {
+        position: absolute;
+        top: 100%;
+        /* Position right below the header */
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        /* Initially hidden */
+        overflow: hidden;
+        transition: max-height 400ms ease-in-out;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* When menu is open */
+    .nav-main.nav-open {
+        max-height: 50vh;
+        /* Set a height to reveal the menu */
+    }
+
+    /* Style the list for vertical display */
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1.5rem 0;
+        background-color: #ffffff;
+    }
+
+    /* Header specific styles for when the menu is open (important for transparent header) */
+    .site-header.menu-open {
+        /* Force a solid background color when the menu is open on mobile */
+        background-color: #ffffff;
+        color: #000000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .site-header.menu-open .nav-link {
+        color: #1f2937;
+    }
+
+    .site-header.menu-open .logo-text-header {
+        color: #1f2937;
+    }
+
+    .site-header.menu-open .logo-icon-header {
+        color: #4f46e5;
+    }
+
+    /* Ensure links take full width for better tapping area */
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+}
+
+/* Update color handling for bar based on scroll state */
+
+/* Transparent Header Colors */
+.header-transparent .bar {
+    background-color: #ffffff;
+}
+
+/* Scrolled Header Colors */
+.header-scrolled .bar {
+    background-color: #1f2937;
+}
+
+/* Fix for menu-open state overwriting transparent colors */
+.site-header.header-transparent.menu-open .bar {
+    background-color: #1f2937;
+    /* Force dark bars when menu is open */
+} 
