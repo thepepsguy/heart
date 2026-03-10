@@ -15,6 +15,7 @@ export const products = [
         withBac: true,
         pros: ["Record-breaking weight loss results", "Triple-pathway agonist", "Improves insulin sensitivity"],
         cons: ["Nausea", "Initial digestion adjustment"],
+        personalThoughts: "This is currently the most powerful metabolic research compound available. From what we've seen, the appetite suppression is almost instantaneous. If you're looking for efficiency, Reta is the benchmark.",
         options: [
             {
                 id: "reta-10",
@@ -41,6 +42,7 @@ export const products = [
         withBac: true,
         pros: ["Powerful anti-aging properties", "Stimulates collagen & elastin", "Accelerates wound healing"],
         cons: ["Injection site sensitivity", "Concentrated solution"],
+        personalThoughts: "Excellent for recovery and skin health, but be warned—GHK-Cu can sting quite a bit at higher concentrations. We recommend reconstituting with 2.5ml+ of BAC water to minimize the 'bite'.",
         options: [
             {
                 id: "ghk-100",
@@ -70,6 +72,7 @@ export const products = [
         withBac: true,
         pros: ["Lean muscle growth", "Improved sleep & recovery", "Excellent safety profile"],
         cons: ["Mild water retention", "Post-injection headache"],
+        personalThoughts: "The safest GH secretagogue. It doesn't give you the standard hunger 'crashing' like GHRP-6 does. Great for improving sleep quality and subtle, long-term anti-aging results.",
         usage: "Mix with 2ml of BAC water. Administer 200-300mcg on an empty stomach."
     },
     {
@@ -84,6 +87,7 @@ export const products = [
         withBac: true,
         pros: ["High-pulse GH release", "Fat burning properties", "Enhanced muscle recovery"],
         cons: ["Flushing/Warmth after injection", "Sensitive to temperature"],
+        personalThoughts: "We call this the 'Flush' peptide—expect a warm sensation right after injection as the GH pulse hits. It works best when stacked with Ipamorelin for that 1+1=3 effect.",
         usage: "Mix with 2ml of BAC water. Usually injected before bed for pulse mimicry."
     }
 ];

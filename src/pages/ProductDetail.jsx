@@ -91,12 +91,17 @@ const ProductDetail = () => {
             <CustomCursor />
             {/* Left: Image Section */}
             <div className="product-image-section">
-                <img
-                    ref={imgRef}
-                    src={displayImage}
-                    alt={product.name}
-                    className="product-detail-img"
-                />
+                <div className="ai-badge-container" ref={imgRef}>
+                    <img
+                        src={displayImage}
+                        alt={product.name}
+                        className="product-detail-img"
+                    />
+                    <div className="ai-badge">
+                        <span className="ai-badge-text">Visualization created with AI</span>
+                        <span className="ai-badge-subtext">Actual vial & label will be similar</span>
+                    </div>
+                </div>
             </div>
 
             {/* Right: Info Section */}
@@ -163,10 +168,23 @@ const ProductDetail = () => {
                             {product.cons && product.cons.map((con, index) => <li key={index}>{con}</li>)}
                         </ul>
                     </div>
+
+                    <div style={{ marginTop: '20px', borderTop: '1px solid #ddd', paddingTop: '20px' }}>
+                        <span className="spec-title">Personal Thoughts</span>
+                        <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: '#444', fontStyle: 'italic', lineHeight: '1.6' }}>
+                            "{product.personalThoughts}"
+                        </p>
+                    </div>
                 </div>
 
                 <div className="product-actions animate-text">
-                    <button className="add-to-cart-btn">Add to Cart</button>
+                    <a href="https://discord.gg/MAMWGg2rS" target="_blank" rel="noopener noreferrer" className="discord-order-btn">
+                        <img src="/msg.svg" alt="Discord" style={{ width: '20px', height: '20px', marginRight: '10px', filter: 'invert(1)' }} />
+                        Order via Discord
+                    </a>
+                    <span className="order-hint">
+                        Always read the personal thoughts
+                    </span>
                 </div>
             </div>
         </div>

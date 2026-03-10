@@ -74,7 +74,7 @@ const HeroSection = () => {
           Here at <span className="highlight">Heart Peptides</span>, we provide high quality verified peptides directly sourced from Chinese labs to your doorsteps. Everything is transparent and right in front of you. Before buying anything, please go to this page to have every single doubt cleared.
         </p>
 
-        <div className="hero-action" ref={buttonRef} style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+        <div className="hero-action" ref={buttonRef} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '40px', gap: '20px' }}>
           <Link to="/about" className="learn-more-btn" style={{
             padding: '16px 40px',
             backgroundColor: '#F04899',
@@ -89,6 +89,19 @@ const HeroSection = () => {
           }}>
             Learn More
           </Link>
+          <span style={{
+            color: 'rgba(255, 255, 255, 0.6)',
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '0.9rem',
+            maxWidth: '200px',
+            textAlign: 'left',
+            lineHeight: '1.4',
+            fontStyle: 'italic',
+            borderLeft: '1px solid rgba(255, 255, 255, 0.2)',
+            paddingLeft: '15px'
+          }}>
+            on the product page always read the personal thought
+          </span>
         </div>
       </div>
 

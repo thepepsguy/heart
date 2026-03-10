@@ -53,6 +53,9 @@ const ProductShowcase = () => {
                     >
                         <div className="product-image-container">
                             <img src={product.options ? product.options[0].image : product.image} alt={product.name} className="product-main-img" />
+                            <div className="ai-badge-home">
+                                <span className="ai-badge-home-text">AI Visualization</span>
+                            </div>
                         </div>
                         <div className="product-info-details">
                             <h3 className="product-name-title">{product.name}</h3>
