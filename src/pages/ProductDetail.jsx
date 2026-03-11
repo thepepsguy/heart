@@ -7,6 +7,27 @@ import { useGSAP } from '@gsap/react';
 import { ArrowLeft } from 'lucide-react';
 import CustomCursor from '../components/CustomCursor';
 
+const renderTextWithLinks = (text) => {
+    if (!text) return "";
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.split(urlRegex).map((part, index) => {
+        if (part.match(urlRegex)) {
+            return (
+                <a
+                    key={index}
+                    href={part.replace(/[.,!?;:]$/, "")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#F04899', textDecoration: 'underline', wordBreak: 'break-all' }}
+                >
+                    {part}
+                </a>
+            );
+        }
+        return part;
+    });
+};
+
 const ProductDetail = () => {
     const { id } = useParams();
     const product = products.find(p => p.id === parseInt(id));
@@ -172,7 +193,7 @@ const ProductDetail = () => {
                     <div style={{ marginTop: '20px', borderTop: '1px solid #ddd', paddingTop: '20px' }}>
                         <span className="spec-title">Personal Thoughts</span>
                         <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: '#444', fontStyle: 'italic', lineHeight: '1.6' }}>
-                            "{product.personalThoughts}"
+                            "{renderTextWithLinks(product.personalThoughts)}"
                         </p>
                     </div>
                 </div>
