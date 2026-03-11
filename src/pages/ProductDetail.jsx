@@ -12,12 +12,10 @@ const renderTextWithLinks = (text) => {
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.split(urlRegex).map((part, index) => {
         if (part.match(urlRegex)) {
-            // Remove trailing punctuation from the URL
-            const cleanUrl = part.replace(/[.,!?;:]$/, "");
             return (
                 <a
                     key={index}
-                    href={cleanUrl}
+                    href={part.replace(/[.,!?;:]$/, "")}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: '#F04899', textDecoration: 'underline', wordBreak: 'break-all' }}
