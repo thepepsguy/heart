@@ -118,7 +118,7 @@ function AboutSection() {
                         <h1 className="QWE-heading" ref={headingRef}>Who We Are</h1>
                         <div className="QWE-paragraph" ref={paragraphRef} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', lineHeight: '1.6' }}>
                             <p style={{ margin: 0 }}>
-                                <AnimatedText text="We’re a group of people who got tired of the peptide market being full of overpriced, low-quality, and sometimes risky products. Many buyers end up sourcing from places like IndiaMART, PurityTherapeutics, Apex Supplement, and similar platforms where prices are high but quality is uncertain." />
+                                <AnimatedText text="We’re a group of people who got tired of the peptide market being full of overpriced, low-quality, and sometimes risky products. Many buyers end up sourcing from platforms where prices are high but quality is uncertain." />
                             </p>
                             <p style={{ margin: 0 }}>
                                 <AnimatedText text="So we built this platform." />
