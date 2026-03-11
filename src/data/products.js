@@ -15,7 +15,7 @@ export const products = [
         withBac: true,
         pros: ["Record-breaking weight loss results", "Triple-pathway agonist", "Improves insulin sensitivity"],
         cons: ["Nausea", "Initial digestion adjustment"],
-        personalThoughts: "This is currently the most powerful metabolic research compound available. From what we've seen, the appetite suppression is almost instantaneous. If you're looking for efficiency, Reta is the benchmark.",
+        personalThoughts: "Me and my friends specifically took Reta first as it was considered the safest. We ordered 3 vials—1 for testing and 2 for ourselves because the Chinese vendor wasn't sending just one. For more info on the process, watch this video: https://www.youtube.com/watch?v=u2UZ6uVz6VI&t=71s. It'll teach you everything. If you have more questions, ask thepepsguy on our Discord server. Things you need to buy before any peptide: alcohol swabs for cleaning and insulin syringes (31g 6mm 100 units). For reconstitution, keep it in the fridge—you can place both the BW and the peptide in there.",
         options: [
             {
                 id: "reta-10",
@@ -42,7 +42,7 @@ export const products = [
         withBac: true,
         pros: ["Powerful anti-aging properties", "Stimulates collagen & elastin", "Accelerates wound healing"],
         cons: ["Injection site sensitivity", "Concentrated solution"],
-        personalThoughts: "Excellent for recovery and skin health, but be warned—GHK-Cu can sting quite a bit at higher concentrations. We recommend reconstituting with 2.5ml+ of BAC water to minimize the 'bite'.",
+        personalThoughts: "We started researching GHK-Cu right after Reta because we wanted something for tissue repair. We ordered extra to ensure that deep blue color was consistent—vendors often try to skimp on the actual copper content. It works wonders for skin, but it can sting, so definitely watch this video for the right technique: https://www.youtube.com/watch?v=u2UZ6uVz6VI&t=71s. For more info, ping thepepsguy on Discord. You'll need alcohol swabs and 31g 6mm (100 units) syringes. Make sure to keep it in the back of the fridge once reconstituted to keep it stable.",
         options: [
             {
                 id: "ghk-100",
@@ -72,7 +72,7 @@ export const products = [
         withBac: true,
         pros: ["Lean muscle growth", "Improved sleep & recovery", "Excellent safety profile"],
         cons: ["Mild water retention", "Post-injection headache"],
-        personalThoughts: "The safest GH secretagogue. It doesn't give you the standard hunger 'crashing' like GHRP-6 does. Great for improving sleep quality and subtle, long-term anti-aging results.",
+        personalThoughts: "Me and my friends looked for the safest way to improve recovery, and Ipamorelin was the clear winner. Unlike older GHRPs, this doesn't give you those crazy hunger spikes. It's best used alongside CJC, and you can see how we handle the prep here: https://www.youtube.com/watch?v=u2UZ6uVz6VI&t=71s. For dosage tips, ask thepepsguy on Discord. Always use fresh 31g insulin syringes and keep your vials refrigerated. This is our go-to for deep, restful sleep research.",
         usage: "Mix with 2ml of BAC water. Administer 200-300mcg on an empty stomach."
     },
     {
@@ -87,7 +87,7 @@ export const products = [
         withBac: true,
         pros: ["High-pulse GH release", "Fat burning properties", "Enhanced muscle recovery"],
         cons: ["Flushing/Warmth after injection", "Sensitive to temperature"],
-        personalThoughts: "We call this the 'Flush' peptide—expect a warm sensation right after injection as the GH pulse hits. It works best when stacked with Ipamorelin for that 1+1=3 effect.",
+        personalThoughts: "We specifically chose the 'No DAC' version to mimic natural GH pulses without keeping the system elevated 24/7. It's the perfect pair for Ipamorelin—1+1 really does equal 3 here. To see the process we use, watch this: https://www.youtube.com/watch?v=u2UZ6uVz6VI&t=71s. Any questions on the 'Flush' feeling? Ask thepepsguy on Discord. Remember: 31g 6mm insulin syringes and fridge storage are non-negotiable for keeping this active.",
         usage: "Mix with 2ml of BAC water. Usually injected before bed for pulse mimicry."
     }
 ];
